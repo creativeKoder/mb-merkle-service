@@ -1,6 +1,6 @@
-org: josiwave
-app: makerbadges
-service: metabadges-merkle-service
+org: makerdao
+app: badges
+service: merkel-service
 
 provider:
   name: aws

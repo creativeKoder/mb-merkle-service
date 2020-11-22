@@ -8,6 +8,11 @@
   },
   "contributors": [
     {
+      "name": "Josi",
+      "email": "iam@josi.io",
+      "url": "https://github.com/creativeKoder/mb-merkle-service"
+    },
+    {
       "name": "Scott Herren",
       "email": "scottrepreneur@ethmail.cc",
       "url": "https://github.com/scottrepreneur/mb-merkle-service"
@@ -15,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/scottrepreneur/mb-merkle-service"
+    "url": "https://github.com/creativeKoder/mb-merkle-service"
   },
   "license": "MIT",
   "engines": {
@@ -66,15 +71,17 @@
     "@types/node": "^8.5.1",
     "@types/supertest": "^2.0.4",
     "aws-auth-helper": "^1.0.0",
+    "dynamodb-local": "^0.0.31",
     "faker": "^4.1.0",
     "jest": "^22.0.4",
     "prettier": "^1.9.2",
     "serverless": "^1.26.0",
+    "serverless-dynamodb-local": "^0.2.39",
     "serverless-plugin-typescript": "^1.1.9",
     "supertest": "^3.1.0",
     "ts-jest": "^22.0.0",
     "ts-node": "^3.3.0",
-    "typescript": "^3.1.3"
+    "typescript": "^4.1.2"
   },
   "prettier": {
     "parser": "typescript",
