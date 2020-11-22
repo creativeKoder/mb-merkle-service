@@ -28,7 +28,7 @@ const makerAllBitesQuery = async function* (step = 0, collateral: string) {
 
   if (!hasNextPage) return { step, query };
 
-  yield { step, query, hasNextPage };
+  return yield { step, query, hasNextPage };
 };
 
 function allBiteAddresses(flipper: string): Promise<any[]> {
@@ -43,7 +43,7 @@ function allBiteAddresses(flipper: string): Promise<any[]> {
     let nextPage = R.prop("hasNextPage", resultSet.value);
 
     do {
-      const nodes = R.prop("nodes", resultSet.value.query.data.allBites);
+      const nodes = R.prop("nodes", resultSet?.value?.query.data.allBites);
 
       if (R.length(nodes) > 0)
         allResults.push(_.map(nodes, "tx.txFrom"));
@@ -93,7 +93,7 @@ const makerAllFlipBidsQuery = async function* (step = 0) {
 
   const hasNextPage = R.prop("hasNextPage", query.data.allFlipBidEvents.pageInfo);
 
-  yield { step, query, hasNextPage };
+  return yield { step, query, hasNextPage };
 
   if (!hasNextPage) return { step, query };
 };
@@ -121,12 +121,12 @@ export function allBidAddresses(): Promise<any[]> {
 
     // Loop
     do {
-      const nodes = R.prop("nodes", resultSet.value.query.data.allFlipBidEvents);
+      const nodes = R.prop("nodes", resultSet?.value?.query.data.allFlipBidEvents);
 
       if (R.length(nodes) > 0)
         fillResultsArray(nodes);
 
-      if (resultSet.value.hasNextPage)
+      if (_.get(resultSet, 'value.hasNextPage'))
         resultSet = await query.next();
 
     } while (resultSet.done === false);
@@ -176,7 +176,7 @@ const makerAllFlipWinsQuery = async function* (step = 0, flipper: string) {
 
   if (!hasNextPage) return { step, query };
 
-  yield { step, query, hasNextPage };
+  return yield { step, query, hasNextPage };
 };
 
 const addressListFilteredByBidId = (list: { guy: string, bidId: string }[]): any[] => {
@@ -206,7 +206,7 @@ export async function allBidGuyAddresses(flipper: string): Promise<{ address: st
 
     // Invoke GenFunc and start process
     let resultSet = await query.next();
-    // console.log(resultSet.value.query.data);
+    // console.log(resultSet?.value?.query.data);
 
     // Deff
     const fillResultsArray = eventNodes => {
@@ -221,12 +221,12 @@ export async function allBidGuyAddresses(flipper: string): Promise<{ address: st
 
     // Loop
     do {
-      const nodes = R.prop("nodes", resultSet.value.query.data.allFlipBidGuys);
+      const nodes = R.prop("nodes", resultSet?.value?.query.data.allFlipBidGuys);
 
       if (R.length(nodes) > 0)
         fillResultsArray(nodes);
 
-      if (resultSet.value.hasNextPage)
+      if (_.get(resultSet, 'value.hasNextPage'))
         resultSet = await query.next();
 
     } while (resultSet.done === false);

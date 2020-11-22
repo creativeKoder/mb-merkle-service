@@ -29,7 +29,7 @@
   "scripts": {
     "format": "prettier '**/*.ts'",
     "clean": "tsc --build --clean",
-    "test": "jest && tsc --noEmit",
+    "test": "jest --passWithNoTests && tsc --noEmit",
     "start": "ts-node src/local.ts",
     "build": "jest && tsc",
     "prepare": "yarn format && yarn test",
@@ -68,7 +68,7 @@
   "devDependencies": {
     "@types/aws-sdk": "0.0.42",
     "@types/faker": "^4.1.2",
-    "@types/jest": "^21.1.9",
+    "@types/jest": "^26.0.15",
     "@types/node": "^8.5.1",
     "@types/supertest": "^2.0.4",
     "aws-auth-helper": "^1.0.0",
@@ -80,9 +80,9 @@
     "serverless-dynamodb-local": "^0.2.39",
     "serverless-plugin-typescript": "^1.1.9",
     "supertest": "^3.1.0",
-    "ts-jest": "^22.0.0",
+    "ts-jest": "^26.4.4",
     "ts-node": "^3.3.0",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.0-beta"
   },
   "prettier": {
     "parser": "typescript",
