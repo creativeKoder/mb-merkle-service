@@ -1,10 +1,10 @@
 {
   "private": true,
-  "name": "metabadges-merkle-service",
+  "name": "merkle-service",
   "description": "Service for address checking and merkle proofs to redeem MetaBadges",
   "version": "1.0.0",
   "author": {
-    "name": "scottrepreneur"
+    "name": "MakerDAO"
   },
   "contributors": [
     {
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/creativeKoder/mb-merkle-service"
+    "url": "https://github.com/creativeKoder/merkel-service"
   },
   "license": "MIT",
   "engines": {
@@ -62,7 +62,8 @@
     "ramda": "^0.27.1",
     "serverless-offline": "^6.8.0",
     "source-map-support": "^0.5.3",
-    "uuid": "^8.0.0"
+    "uuid": "^8.0.0",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "@types/aws-sdk": "0.0.42",
