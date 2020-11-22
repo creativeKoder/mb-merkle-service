@@ -31,7 +31,7 @@
     "clean": "tsc --build --clean",
     "test": "jest --passWithNoTests && tsc --noEmit",
     "start": "ts-node src/local.ts",
-    "build": "jest && tsc",
+    "build": "jest --passWithNoTests && tsc",
     "prepare": "yarn format && yarn test",
     "package": "yarn build && serverless package",
     "deploy": "yarn clean && yarn build && eval \"serverless deploy\""
@@ -82,7 +82,7 @@
     "supertest": "^3.1.0",
     "ts-jest": "^26.4.4",
     "ts-node": "^3.3.0",
-    "typescript": "^4.1.0-beta"
+    "typescript": "^4.1.2"
   },
   "prettier": {
     "parser": "typescript",
