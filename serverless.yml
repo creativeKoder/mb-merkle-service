@@ -31,7 +31,7 @@ plugins:
 functions:
   http:
     handler: src/lambda.http
-    timeout: 45
+    timeout: 30
     events:
       - http: ANY /
       - http: ANY /{proxy+}

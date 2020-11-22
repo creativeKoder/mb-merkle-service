@@ -1,16 +1,15 @@
 {
   "private": true,
-  "name": "merkle-service",
+  "name": "merkel-service",
   "description": "Service for address checking and merkle proofs to redeem MetaBadges",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "MakerDAO"
   },
-  "contributors": [
-    {
+  "contributors": [{
       "name": "Josi",
       "email": "iam@josi.io",
-      "url": "https://github.com/creativeKoder/mb-merkle-service"
+      "url": "https://github.com/creativeKoder/merkel-service"
     },
     {
       "name": "Scott Herren",
