@@ -22,17 +22,13 @@ export function configureApp() {
   app.use(eventContext());
 
   app.get("/", (req, res) => {
-    res.json({ blah: "test" });
+    res.json({ api: "MakerDAO - Badges API" });
   });
 
   app.get("/address/:address", async (req, res) => {
     getBadgesForAddress(req.params.address)
-      .then(badgeList => {
-        res.json({ badges: badgeList });
-      })
-      .catch(e => {
-        console.log(e);
-      });
+      .then(badgeList => { res.json({ badges: badgeList }); })
+      .catch(e => { console.log(e); });
   });
 
   app.get("/update-roots", async (req, res) => {
