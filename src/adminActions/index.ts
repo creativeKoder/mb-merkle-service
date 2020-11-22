@@ -22,7 +22,7 @@ import {
 } from "./auctions";
 import { ZERO_ROOT } from '../constants';
 
-import { MerkleTree } from "../utils/merkleTree";
+import MerkleTree from '../utils/merkleTree';
 
 export async function updateRoots() {
   // saving at least 1 dai in DSR
