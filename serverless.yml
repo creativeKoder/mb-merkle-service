@@ -33,8 +33,14 @@ functions:
     handler: src/lambda.http
     timeout: 30
     events:
-      - http: ANY /
-      - http: ANY /{proxy+}
+      - http:
+          method: ANY
+          path: /
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
     environment:
       ENVIRONMENT: production
       DYNAMODB_TABLE: ${env:DYNAMODB_TABLE}

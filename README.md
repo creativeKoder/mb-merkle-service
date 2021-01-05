@@ -24,10 +24,12 @@ Jest has been configured to run any file ending in `*.test.ts`, `*.test.tsx` or 
 
 ## Infrastructure
 
+[DeployPipeline] (https://www.dropbox.com/s/s63c40nqq8q85ax/MakerDAO-Badges-Pipeline.mov?dl=0)
+
 Defaults:
 - Doesn't use VPC
-- Deployed to eu-west-1 (Ireland)
-- Lambda timeout: 2 seconds
+- Deployed to us-east-1
+- Lambda timeout: 30 seconds
 
 In the serverless.yml file uncomment from line 24 onwards to enable the hyper-paranoid security locked down setup. This uses private subnets in three availability zones, and does not include an internet gateway - which means the lambdas can't access the internet, and the only way they can be invoked is via API gateway.
 
